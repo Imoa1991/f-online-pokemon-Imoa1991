@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      character: '',
+      charactersFromAPI: []
+    }
+    this.saveInput=this.saveInput.bind(this);
+  }
+  componentDidMount(){
+    this.search()
+  }
+  saveInput(e) {
+  const value = e.currentTarget.value.toLowerCase();
+  this.setState({
+    character: value
+  });
+}
+search(){
+    fetch('http://pokeapi.salestock.net/api/v2/pokemon/?limit=25')
+    .then(response => {
+      return response.json();
+    })
+    .then(apiResponse => {
+      this.setState({
+        charactersFromAPI: apiResponse.results
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Home name={this.state.name} saveInput={this.saveInput} character={this.state.character} charactersFromAPI={this.state.charactersFromAPI}/>
       </div>
     );
   }
