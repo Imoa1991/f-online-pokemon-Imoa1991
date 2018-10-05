@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/searcher.css';
 
 class Seacrcher extends React.Component {
   render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/pokemonList.css';
+
 class PokemonList extends React.Component {
   render() {
     return (
@@ -9,19 +9,20 @@ class PokemonList extends React.Component {
             console.log(item);
             return item.name.toLowerCase().includes(this.props.character);
           })
+          .sort((a,b) => a.id - b.id)
           .map(characterData =>
-            <li className="list" key={characterData.name}>
+            <li className="pokemonSpecipications" key={characterData.name}>
               <div className="pokemonHeader">
                 <img className="pokemonImage" src={characterData.sprites.front_default} alt="pokemon"/>
-                <p className="id">{characterData.id}</p>
+                <p className="pokemonId">{"ID/" + characterData.id}</p>
               </div>
               <div className="pokemonMain">
-                <h2 className="name">{characterData.name}</h2>
-                <ul className="types">
+                <h2 className="pokemonName">{characterData.name}</h2>
+                <ul className="pokemonTypes">
                   {
-                    characterData.types.map(function(elements){
+                    characterData.types.map(function(elements, id){
                       return (
-                        <li className="elements" key={elements.type.name}>{elements.type.name}</li>
+                        <li className="pokemonElements" key={`${elements.type.name}_${characterData.id}`}>{elements.type.name}</li>
                       );
                     })
                   }

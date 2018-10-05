@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home';
 // import pokemonList from './data/pokemonList.json';
-// import pokemon1 from './data/pokemon1.json';
 
 class App extends Component {
   constructor(props){
@@ -24,7 +23,7 @@ class App extends Component {
     });
   }
   search(){
-    fetch('http://pokeapi.salestock.net/api/v2/pokemon/?limit=2')
+    fetch('http://pokeapi.salestock.net/api/v2/pokemon/?limit=25')
     .then(response => {
       return response.json();
     })
@@ -50,7 +49,6 @@ class App extends Component {
       console.log("arrayPokemonsData" + pokemonsData)
     });
   }
-
   // fakeSearch() {
   //   this.setState({
   //     charactersFromAPI: pokemonList.results
