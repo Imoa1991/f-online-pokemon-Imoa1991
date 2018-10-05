@@ -10,7 +10,7 @@ class Home extends React.Component {
         <Searcher name={this.props.name} saveInput={this.props.saveInput} character={this.props.character} />
         <PokemonList charactersFromAPI={this.props.charactersFromAPI} character={this.props.character} />
       </div>
-      );
+    );
   }
 }
 

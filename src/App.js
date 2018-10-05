@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home';
-import pokemonList from './data/pokemonList.json';
-import pokemon1 from './data/pokemon1.json';
+// import pokemonList from './data/pokemonList.json';
+// import pokemon1 from './data/pokemon1.json';
 
 class App extends Component {
   constructor(props){
@@ -18,11 +18,11 @@ class App extends Component {
     // this.fakeSearch();
   }
   saveInput(e) {
-  const value = e.currentTarget.value.toLowerCase();
-  this.setState({
-    character: value
-  });
-}
+    const value = e.currentTarget.value.toLowerCase();
+    this.setState({
+      character: value
+    });
+  }
   search(){
     fetch('http://pokeapi.salestock.net/api/v2/pokemon/?limit=2')
     .then(response => {
@@ -33,27 +33,29 @@ class App extends Component {
     })
   }
   searchPokemon(apiResponse){
-    console.log(apiResponse);
     let pokemonsData=[];
     apiResponse.forEach(pokemon => {
+      console.log("pokemonURL " + pokemon.url)
       fetch(pokemon.url)
       .then(response => {
         return response.json();
       })
       .then(pokemonData => {
+        console.log("pokemonData " + pokemonData)
         pokemonsData.push(pokemonData);
         this.setState({
           charactersFromAPI: pokemonsData
         })
       });
+      console.log("arrayPokemonsData" + pokemonsData)
     });
   }
 
-  fakeSearch() {
-    this.setState({
-      charactersFromAPI: pokemonList.results
-    });
-  }
+  // fakeSearch() {
+  //   this.setState({
+  //     charactersFromAPI: pokemonList.results
+  //   });
+  // }
   render() {
     return (
       <div className="App">
