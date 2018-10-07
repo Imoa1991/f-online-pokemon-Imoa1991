@@ -34,6 +34,7 @@ class App extends Component {
   searchPokemon(apiResponse){
     let pokemonsData=[];
     apiResponse.forEach(pokemon => {
+      console.log(pokemon.url);
       fetch(pokemon.url)
       .then(response => {
         return response.json();

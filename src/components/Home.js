@@ -7,8 +7,10 @@ class Home extends React.Component {
   render() {
     return (
       <div className="pokemons">
-        <Searcher name={this.props.name} saveInput={this.props.saveInput} character={this.props.character} />
-        <PokemonList charactersFromAPI={this.props.charactersFromAPI} character={this.props.character} />
+        <div className="pokemonsInformation">
+          <Searcher name={this.props.name} saveInput={this.props.saveInput} character={this.props.character} />
+          <PokemonList charactersFromAPI={this.props.charactersFromAPI} character={this.props.character} />
+        </div>
         <Decoration />
       </div>
     );
