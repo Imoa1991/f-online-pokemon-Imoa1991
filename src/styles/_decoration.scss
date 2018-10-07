@@ -1,0 +1,38 @@
+.triangleLeft {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-top: 100px solid #000;
+  border-left: 100px solid transparent;
+}
+.triangleRigth {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-top: 100px solid #000;
+  border-right: 100px solid transparent;
+}
+.circleLeft {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgb(250, 0, 0);
+  background: rgb(250, 0, 0);
+  border-radius: 100% 0 0 0;
+}
+.circleRigth {
+  position: absolute;
+  bottom: 0px;
+  left:0px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgb(250, 0, 0);
+  background: rgb(250, 0, 0);
+  border-radius: 0 100% 0 0;
+}

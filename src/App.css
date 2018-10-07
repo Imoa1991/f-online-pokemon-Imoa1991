@@ -6,8 +6,7 @@
   display: block;
   width: 500px;
   padding: 10px;
-  margin: 0 auto;
-  margin-top: 20px; }
+  margin: 0 auto; }
 
 .pokemonList {
   list-style: none;
@@ -50,11 +49,50 @@
   border: 1px solid #bfb7ad;
   border-radius: 15%; }
 
+.triangleLeft {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-top: 100px solid #000;
+  border-left: 100px solid transparent; }
+
+.triangleRigth {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-top: 100px solid #000;
+  border-right: 100px solid transparent; }
+
+.circleLeft {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #fa0000;
+  background: #fa0000;
+  border-radius: 100% 0 0 0; }
+
+.circleRigth {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #fa0000;
+  background: #fa0000;
+  border-radius: 0 100% 0 0; }
+
 * {
   margin: 0;
   padding: 0; }
 
 body {
   background-color: yellow;
-  width: 100%;
-  height: 100%; }
+  width: 100vw;
+  height: 100vh;
+  position: relative; }

@@ -6,7 +6,6 @@ class PokemonList extends React.Component {
       <ul className="pokemonList">
         {
           this.props.charactersFromAPI.filter(item => {
-            console.log(item);
             return item.name.toLowerCase().includes(this.props.character);
           })
           .sort((a,b) => a.id - b.id)

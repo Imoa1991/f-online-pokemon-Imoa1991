@@ -34,19 +34,16 @@ class App extends Component {
   searchPokemon(apiResponse){
     let pokemonsData=[];
     apiResponse.forEach(pokemon => {
-      console.log("pokemonURL " + pokemon.url)
       fetch(pokemon.url)
       .then(response => {
         return response.json();
       })
       .then(pokemonData => {
-        console.log("pokemonData " + pokemonData)
         pokemonsData.push(pokemonData);
         this.setState({
           charactersFromAPI: pokemonsData
         })
       });
-      console.log("arrayPokemonsData" + pokemonsData)
     });
   }
   // fakeSearch() {
